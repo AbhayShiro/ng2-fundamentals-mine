@@ -1,0 +1,12 @@
+<div>
+    <h2>Upcoming Angular 2 Events</h2>
+    <hr/>
+    <!--<event-thumbnail *ngFor="let ev of event1" [event]="ev" (eventClick)="handleEventClicked($event)"></event-thumbnail>-->
+    <!-- *ngFor is a structural directive. ngFor repeats a particular element that it is put on for numbers of items in the sequence inside ngFor. -->
+    <div class="row">
+        <div *ngFor="let ev of event1" class="col-md-5">
+            <event-thumbnail [routerLink]="['/events',ev.id]" #thumbnail (click)="handleClick(ev.name)" [event]="ev"></event-thumbnail>
+        </div>
+    </div>
+    <!--Template reference variable is used to call methods of child component from the parent component. Template referencing variable is declared in HTML selector of the child component like #SomeCustomName . -->
+</div>
